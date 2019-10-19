@@ -55,5 +55,6 @@ onCreate(){
 }
 ```
 
+ViewModel处理业务逻辑，并在屏幕旋转，Activity被销毁重建的时候，依然存在。
 
-
+ViewModel组件的源码相当简单，它的目的就是建立一个UI和数据的隔离带。ViewModel为Activity或Fragment提供数据访问接口，同时将UI层的指令传递给数据层。简单点说，ViewModel组件的源码就是围绕如何获取一个ViewModel来写的。ViewModelProviders.of获取ViwModelProvider，ViewModelProvider.get获取ViewModel。其中ViewModel的构造方式可以由ViewModelProviders.of的Factory参数自行定义。support包中的AppCompatActivity已经整合了LifeCycle和ViewModel组件。
